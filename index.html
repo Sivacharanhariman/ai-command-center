@@ -1,46 +1,128 @@
 <!DOCTYPE html>
-<html lang ="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>AI Command Center</title>
+    <title>AI Command Center</title>
 
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <main>
-            <h1>AI Command Center</h1>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-            <p class="prototype-label">Frontend Prototype</p>
-            <p class="description">Ask the system a question or give it an Instruction.</p>
+<body>
 
-            <label for="user-input">Your message</label>
+    <main class="app-container">
 
-            <textarea id="user-input" placeholder="Type something here..."></textarea>
-
-            <div class="button-group">
-                <button id="send-button">Send</button>
-                <button id="clear-button">Clear</button>
+        <header class="app-header">
+            <div>
+                <p class="eyebrow">FRONTEND PROTOTYPE</p>
+                <h1>AI Command Center</h1>
+                <p class="subtitle">
+                    Send a question or instruction to your future AI system.
+                </p>
             </div>
 
-            <section id="response-section">
+            <div class="status-badge">
+                <span class="status-dot"></span>
+                Frontend Online
+            </div>
+        </header>
 
-                <h2>Response</h2>
 
-                <p id="response-text">Waiting for your command...</p>
+        <section class="command-panel">
 
-            </section>
+            <label for="user-input">Your Command</label>
 
-            <section id="backend-section">
+            <textarea
+                id="user-input"
+                placeholder="Ask something..."
+                maxlength="1000"
+            ></textarea>
 
-                <p>System Status: offline</p>
-                <span id="span-challange">offline</span>
-            </section>
+            <div class="input-footer">
 
-        </main>
+                <p id="character-count">
+                    0 / 1000
+                </p>
 
-        <script src="script.js"></script>
+                <div class="button-group">
 
-    </body>
+                    <button
+                        id="clear-button"
+                        class="secondary-button"
+                        type="button"
+                    >
+                        Clear
+                    </button>
+
+                    <button
+                        id="send-button"
+                        class="primary-button"
+                        type="button"
+                    >
+                        Send Command
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="response-panel">
+
+            <div class="response-header">
+
+                <div>
+                    <p class="eyebrow">SYSTEM RESPONSE</p>
+                    <h2>Response</h2>
+                </div>
+
+                <span id="response-status">
+                    Ready
+                </span>
+
+            </div>
+
+            <div
+                id="response-text"
+                class="response-content"
+            >
+                Waiting for your command...
+            </div>
+
+        </section>
+
+
+        <footer class="system-footer">
+
+            <div>
+                <span>Frontend</span>
+                <strong class="online">
+                    ONLINE
+                </strong>
+            </div>
+
+            <div>
+                <span>Backend</span>
+                <strong class="offline">
+                    NOT CONNECTED
+                </strong>
+            </div>
+
+            <div>
+                <span>AI Model</span>
+                <strong class="offline">
+                    NOT CONNECTED
+                </strong>
+            </div>
+
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
 </html>
